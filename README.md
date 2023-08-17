@@ -65,6 +65,6 @@ The `Makefile` provided in this repository includes the following targets and ru
 
 ## License
 
-This repository is licensed under the MIT License.
+This repository is licensed under the Sprints License.
 
 ---
