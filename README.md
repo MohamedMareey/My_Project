@@ -3,7 +3,7 @@
     The command used to build the static library :
         ar rcs libMath.a math_lib.o
 ```
-	This command is used to create a static library named libMath.a by archiving the object file math_lib.o.The ar command is used to manage and create archives (libraries) in Unix-like systems. The rcs flags are used with ar to create a new archive or update an existing one. The resulting library will contain the compiled code from the math_lib.o object file, which can be linked with other programs to use the functions and symbols defined in the math_lib.o file.
+This command is used to create a static library named libMath.a by archiving the object file math_lib.o.The ar command is used to manage and create archives (libraries) in Unix-like systems. The rcs flags are used with ar to create a new archive or update an existing one. The resulting library will contain the compiled code from the math_lib.o object file, which can be linked with other programs to use the functions and symbols defined in the math_lib.o file.
 ```
     The command to be used to link the static library to the test app :
         cc -o main_s.exe main.cpp -L. libMath.a -lstdc++
@@ -21,15 +21,15 @@
         g++ -c -Wall -Werror -fpic math_lib.cpp -o libmath_h.o
 ```
     Compile the source file 'math_lib.cpp' with the following options:
-		1- -c: Compile only, do not link
-		2- -Wall: Enable all warning messages
+	1- -c: Compile only, do not link
+	2- -Wall: Enable all warning messages
         3- -Werror: Treat warnings as errors
         4- -fpic: Generate position-independent code (PIC) for shared libraries
         5- The output object file will be named 'libmath_h.o'
 ```
         g++ -shared -o libMath_h.so libmath_h.o		
 ```
-		1- Compile the object file 'libmath_h.o' into a shared library named 'libMath_h.so'
+	1- Compile the object file 'libmath_h.o' into a shared library named 'libMath_h.so'
         2- -shared: Create a shared library
         3- -o: Specify the output file name
         4- The resulting shared library will be named 'libMath_h.so'
