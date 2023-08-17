@@ -1,48 +1,70 @@
-# Static library :
+# C++ Program with Makefile Example
 
-    The command used to build the static library :
-        ar rcs libMath.a math_lib.o
-```
-This command is used to create a static library named libMath.a by archiving the object file math_lib.o.The ar command is used to manage and create archives (libraries) in Unix-like systems. The rcs flags are used with ar to create a new archive or update an existing one. The resulting library will contain the compiled code from the math_lib.o object file, which can be linked with other programs to use the functions and symbols defined in the math_lib.o file.
-```
+This repository contains a simple C++ program along with a Makefile that can be used to compile and build the program. The program demonstrates the use of a Makefile for managing the build process and compiling the C++ source code.
 
-    The command to be used to link the static library to the test app :
-        cc -o main_s.exe main.cpp -L. libMath.a -lstdc++
-```		
-    1- Compile and link the program 'main.cpp' with the static library 'libMath.a'
-    2- The resulting executable will be named 'main_s.exe'
-    3- The '-L.' flag specifies to search for libraries in the current directory
-    4- The '-lstdc++' flag links the C++ standard library
-```	
+## Contents
 
+1. Introduction
+2. Requirements
+3. Usage
+4. Makefile Explanation
+5. License
 
-# Shared library :
+## Introduction
 
-    The command used to build the shared library :
-        g++ -c -Wall -Werror -fpic math_lib.cpp -o libmath_h.o
-```
-    Compile the source file 'math_lib.cpp' with the following options:
-	1- -c: Compile only, do not link
-	2- -Wall: Enable all warning messages
-        3- -Werror: Treat warnings as errors
-        4- -fpic: Generate position-independent code (PIC) for shared libraries
-        5- The output object file will be named 'libmath_h.o'
-```
-        g++ -shared -o libMath_h.so libmath_h.o		
-```
-	1- Compile the object file 'libmath_h.o' into a shared library named 'libMath_h.so'
-        2- -shared: Create a shared library
-        3- -o: Specify the output file name
-        4- The resulting shared library will be named 'libMath_h.so'
-```		
+The `main.cpp` file in this repository contains a basic C++ program that prints a success message to the console. The `Makefile` provides the necessary instructions to compile and build the program.
 
-    The command used to link the shared library to the test app :
-        gcc -Wall -o main_h.exe main.cpp -lstdc++ -Wl,-rpath=. libMath_h.so
-```
-    1- Compile the source file 'main.cpp' into an executable named 'main_h.exe'
-    2- -Wall: Enable all compiler warnings
-    3- -o: Specify the output file name
-    4- -lstdc++: Link against the C++ standard library
-    5- -Wl,-rpath=. : Set the runtime search path for libraries to the current directory
-    6- libMath_h.so : Link against the shared library 'libMath_h.so'
-```
+## Requirements
+
+To compile and run the C++ program in this repository, you need to have the following installed:
+
+- C++ Compiler (e.g., g++)
+- Make Utility
+
+## Usage
+
+1. Clone the repository to your local machine using the following command:
+   ```
+   git clone https://github.com/your-username/your-repository.git
+   ```
+
+2. Navigate to the repository's directory:
+   ```
+   cd your-repository
+   ```
+
+3. Compile and build the program using the Makefile by running the following command:
+   ```
+   make
+   ```
+
+4. Run the compiled program:
+   ```
+   ./finalTarget
+   ```
+
+5. To clean the generated files, use the following command:
+   ```
+   make clean
+   ```
+
+6. To install the compiled program, use the following command:
+   ```
+   make install
+   ```
+
+## Makefile Explanation
+
+The `Makefile` provided in this repository includes the following targets and rules:
+
+- `all`: The default target that builds the `finalTarget` executable.
+- `finalTarget`: The rule to build the `finalTarget` executable by linking the `main.o` object file.
+- `main.o`: The rule to compile `main.cpp` into the `main.o` object file.
+- `clean`: The target to remove generated files, including the `finalTarget` executable and object files.
+- `install`: The target to install the `finalTarget` executable to the specified installation path.
+
+## License
+
+This repository is licensed under the MIT License.
+
+---
