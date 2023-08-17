@@ -2,9 +2,9 @@
 
     The command used to build the static library :
         ar rcs libMath.a math_lib.o
-
-		/* This command is used to create a static library named libMath.a by archiving the object file math_lib.o.The ar command is used to manage and create archives (libraries) in Unix-like systems. The rcs flags are used with ar to create a new archive or update an existing one. The resulting library will contain the compiled code from the math_lib.o object file, which can be linked with other programs to use the functions and symbols defined in the math_lib.o file.
-
+```
+		This command is used to create a static library named libMath.a by archiving the object file math_lib.o.The ar command is used to manage and create archives (libraries) in Unix-like systems. The rcs flags are used with ar to create a new archive or update an existing one. The resulting library will contain the compiled code from the math_lib.o object file, which can be linked with other programs to use the functions and symbols defined in the math_lib.o file.
+```
     The command to be used to link the static library to the test app :<br>
         cc -o main_s.exe main.cpp -L. libMath.a -lstdc++
 		
