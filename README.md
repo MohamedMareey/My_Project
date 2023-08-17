@@ -1,70 +1,75 @@
-# C++ Program with Makefile Example
+# Creating a CMake Based project
 
-This repository contains a simple C++ program along with a Makefile that can be used to compile and build the program. The program demonstrates the use of a Makefile for managing the build process and compiling the C++ source code.
+This repository contains a C++ project with multiple directories that showcases the use of separate source files, a custom library, and a CMake build system for managing and building the project.
 
-## Contents
+## Project Structure
 
-1. Introduction
-2. Requirements
-3. Usage
-4. Makefile Explanation
-5. License
+The project is organized into the following directories:
 
-## Introduction
+1. `src`: Contains the main program source code.
+   - `main.cpp`: The main entry point of the program.
+   - `Print.cpp`: Contains the function to print "helloWorld" to the console.
+   - `CMakeLists.txt`: CMake configuration file for building the executable.
 
-The `main.cpp` file in this repository contains a basic C++ program that prints a success message to the console. The `Makefile` provides the necessary instructions to compile and build the program.
+2. `library`: Contains additional source code and headers for the custom library.
+   - `WriteInFile.cpp`: Contains the function to write "helloWorld" to a file.
+   - `CMakeLists.txt`: CMake configuration file for building the custom library.
+
+3. `include`: Contains header files for the custom library.
+   - `Print.h`: Header for the function to print to the console.
+   - `WriteInFile.h`: Header for the function to write to a file.
+
+4. `CMakeLists.txt`: CMake configuration file in the root directory for the entire project.
 
 ## Requirements
 
-To compile and run the C++ program in this repository, you need to have the following installed:
+To build and run the project, you need the following installed:
 
+- CMake (version >= 3.10)
 - C++ Compiler (e.g., g++)
-- Make Utility
 
-## Usage
+## Building and Running
 
-1. Clone the repository to your local machine using the following command:
-   ```
+1. Clone the repository to your local machine:
+   ```sh
    git clone https://github.com/your-username/your-repository.git
    ```
 
 2. Navigate to the repository's directory:
-   ```
+   ```sh
    cd your-repository
    ```
 
-3. Compile and build the program using the Makefile by running the following command:
+3. Create a build directory:
+   ```sh
+   mkdir build
+   cd build
    ```
+
+4. Generate build files using CMake:
+   ```sh
+   cmake ..
+   ```
+
+5. Build the project:
+   ```sh
    make
    ```
 
-4. Run the compiled program:
-   ```
-   ./finalTarget
-   ```
-
-5. To clean the generated files, use the following command:
-   ```
-   make clean
+6. Run the executable:
+   ```sh
+   ./src/FinalTarget
    ```
 
-6. To install the compiled program, use the following command:
-   ```
-   make install
-   ```
+## Library Details
 
-## Makefile Explanation
-
-The `Makefile` provided in this repository includes the following targets and rules:
-
-- `all`: The default target that builds the `finalTarget` executable.
-- `finalTarget`: The rule to build the `finalTarget` executable by linking the `main.o` object file.
-- `main.o`: The rule to compile `main.cpp` into the `main.o` object file.
-- `clean`: The target to remove generated files, including the `finalTarget` executable and object files.
-- `install`: The target to install the `finalTarget` executable to the specified installation path.
+- The `Print` library provides a function to print "helloWorld" to the console.
+- The `WriteInFile` library provides a function to write "helloWorld" to a file named `helloWorld.txt`.
 
 ## License
 
-This repository is licensed under the Sprints License.
+This project is licensed under the [MIT License](LICENSE).
 
 ---
+
+Please replace `"your-username"` and `"your-repository"` with your actual GitHub username and repository name. You can modify the content as needed and add more sections if you want to provide additional information or instructions.
